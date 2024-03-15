@@ -82,6 +82,15 @@ blogRouter.get('/get-more-blogs', async (req, res) => {
     }
 })
 
+blogRouter.get('/top-three-blog', async (req, res) => {
+    try {
+        const latestBlog = await client.db("BLOGS").collection("SNIPPET_ALL").find({}).limit(3).sort({ date: 1 }).toArray();
+        res.json(latestBlog);
+    } catch (err) {
+        throw (err)
+    }
+})
+
 process.on('exit', async () => {
     await client.close()
 })
