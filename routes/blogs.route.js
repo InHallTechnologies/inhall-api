@@ -91,6 +91,16 @@ blogRouter.get('/top-three-blog', async (req, res) => {
     }
 })
 
+blogRouter.get('/get-all-blog-path', async (req, res) => {
+    try {
+        const latestBlog = await client.db("BLOGS").collection("SNIPPET_ALL").find({}).sort({ date: 1 }).toArray();
+        const slugs = latestBlog.map(item => item.slug)
+        res.json(slugs);
+    } catch (err) {
+        throw (err)
+    }
+})
+
 process.on('exit', async () => {
     await client.close()
 })
