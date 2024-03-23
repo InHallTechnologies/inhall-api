@@ -3,7 +3,7 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 
 const blogRouter = Router();
 
-const MONGO_URL = `mongodb+srv://inhallupdatebackup:ZcTL0dObZBxSuCP1@cluster0.sooi3mv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+const MONGO_URL = `mongodb+srv://vercel-admin-user:zIB9EAsTW46vIsjA@cluster0.sooi3mv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
 let client = new MongoClient(MONGO_URL, {
     serverApi: {

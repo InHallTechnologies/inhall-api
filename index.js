@@ -13,9 +13,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/blogs", blogRouter);
 
-cron.schedule('* 12 * * *', () => {
-    console.log("SSUP");
-  });
+
 
 app.get('/', (req, res) => {
     res.send("WORKING")
